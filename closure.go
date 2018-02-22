@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+
 func later() func(string) string {
 
 	// 一つ前の文字列を保存するための変数
@@ -14,6 +15,9 @@ func later() func(string) string {
 		return s
 	}
 }
+// 変数storeは見かけ上、関数内のローカル変数だが、内部的にはクロージャに属する変数として機能する。
+// クロージャーによって捕捉された変数の領域はクロージャーから何らかの形で参照され続ける限り破棄されない
+
 
 func main() {
 
