@@ -18,4 +18,10 @@ func RaiseError() error {
 func main() {
 	err := RaiseError()
 	fmt.Println(err.Error())
+
+	// type assertion
+	e, ok := err.(*MyError)
+	if ok {
+		fmt.Println(e.ErrCode)
+	}
 }
